@@ -6,14 +6,16 @@ public class Pessoa {
     private String Endereço;
     private String DatNasci;
     private Long Telefone;
-    private Long CPF;
+    private int CPF;
+    protected double valAula;
     
-    public Pessoa(String Nome, String Enderço, String DatNasci, Long Telefone, Long CPF){
+    public Pessoa(String Nome, String Enderço, String DatNasci, Long Telefone, int CPF, double valAula){
         this.Nome = Nome;
         this.Endereço = Enderço;
         this.DatNasci = DatNasci;
         this.Telefone = Telefone;
         this.CPF = CPF;
+        this.valAula = valAula;
     }
 
     public String getNome() {
@@ -24,7 +26,7 @@ public class Pessoa {
         return DatNasci;
     }
     
-    public Long getCPF() {
+    public int getCPF() {
          return CPF;
      }
     
