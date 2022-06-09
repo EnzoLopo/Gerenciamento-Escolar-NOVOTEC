@@ -6,37 +6,32 @@ import Pacote1.Pessoa;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Professor professor = new Professor(00, true, 0, "Nome", "Endereço", "DatNasci", 0000, 0000);
-        Aluno aluno = new Aluno(00, 1, "Nome", "Endereço", "DatNasci", 0000, 0000);
-        
-        Scanner entrada = new Scanner(System.in);
 
-        String Nome;
-        String Endereço;
-        String DatNasci;
-        long Telefone;
-        int CPF;
-        long ra;
-        int Mensalidade;
-        int Materias;
-        long rs;
-        double valAula;
-        boolean tipoContrato;
-        int numAulas;
-        int opcao;
+        // Declaração do Scanner//
+        Scanner entrada = new Scanner(System.in);
+        // Variavéis//
+        String Nome = "", Endereço = "", DatNasci = ""; 
+        long Telefone = 0 , rs = 0, ra = 0;
+        int CPF = 0, Mensalidade = 0, Materias = 0, numAulas = 0, opcao = 0;
+        double valAula = 0;
+        boolean tipoContrato = true;
+
+       // Declaração das Classes Usadas no Projeto// 
+        Professor professor = new Professor(rs, tipoContrato, numAulas, Nome, Endereço, DatNasci, Telefone, CPF);
+        Aluno aluno = new Aluno(ra, Materias, Nome, Endereço, DatNasci, Telefone, CPF);
         
         do{
-            System.out.println("\n1 Cadastrar Aluno");
-            System.out.println("2 Cadastrar Professor");
-            System.out.println("3 Diario de Classe");            
-            System.out.println("4 Cadastrar Notas");
-            System.out.println("5 Ver Frequencia");
-            System.out.println("6 Ver Alunos");
-            System.out.println("7 Ver Professores");
-            System.out.println("8 Ver Salarios");
-            System.out.println("9 Ver Mensalidades");
-            System.out.println("10 Ver Notas");
-            System.out.println("11 Valor Aula");
+            System.out.println("\n1 - Cadastrar Aluno" +
+                               "\n2 - Cadastrar Professor"+
+                               "\n3 - Diario de Classe"+
+                               "\n4 - Cadastrar Notas"+
+                               "\n5 - Ver Frequencia"+
+                               "\n6 - Ver Alunos"+
+                               "\n7 - Ver Professores" +
+                               "\n8 - Ver Salarios"+
+                               "\n9 - Ver Mensalidade"+
+                               "\n10 -Ver Notas"+
+                               "\n11- Valor Aula\n");
             opcao = entrada.nextInt();
             switch(opcao){
                 case 1: 
