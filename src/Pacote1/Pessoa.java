@@ -9,13 +9,12 @@ public class Pessoa {
     private int CPF;
     protected double valAula;
     
-    public Pessoa(String Nome, String Enderço, String DatNasci, Long Telefone, int CPF, double valAula){
+    public Pessoa(String Nome, String Endereço, String DatNasci, Long Telefone, int CPF){
         this.Nome = Nome;
-        this.Endereço = Enderço;
+        this.Endereço = Endereço;
         this.DatNasci = DatNasci;
         this.Telefone = Telefone;
         this.CPF = CPF;
-        this.valAula = valAula;
     }
 
     public String getNome() {
@@ -36,5 +35,9 @@ public class Pessoa {
 
     public Long getTelefone() {
         return Telefone;
+    }
+
+    public void setValAula(double valAula) {
+        this.valAula = valAula;
     }
 }

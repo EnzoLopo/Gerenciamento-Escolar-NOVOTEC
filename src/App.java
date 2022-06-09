@@ -1,12 +1,13 @@
 import Pacote1.Professor;
 import java.util.Scanner;
 import Pacote1.Aluno;
+import Pacote1.Pessoa;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Professor professor = new Professor(00, true, 0, "Nome", "Enderço", "DatNasci", 0000, 0000, 000);
-        Aluno aluno = new Aluno(00, 1, "Nome", "Enderço", "DatNasci", 0000, 0000, 000);
+        Professor professor = new Professor(00, true, 0, "Nome", "Endereço", "DatNasci", 0000, 0000, 000);
+        Aluno aluno = new Aluno(00, 1, "Nome", "Endereço", "DatNasci", 0000, 0000, 000);
         
         Scanner entrada = new Scanner(System.in);
 
@@ -65,6 +66,10 @@ public class App {
                 case 9:
                 case 10:
                 case 11:
+                    System.out.println("Qual é o Valor da Aula:");
+                    valAula = entrada.nextInt();
+                    aluno.setValAula(valAula);
+                    professor.setValAula(valAula);
             }
         }while (opcao <= 10);
         }

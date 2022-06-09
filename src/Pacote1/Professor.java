@@ -6,8 +6,8 @@ public class Professor extends Pessoa {
     private boolean tipoContrato;
     private int numAulas;
 
-    public Professor(long rs, Boolean tipoContrato, int numeroAulas, String Nome, String Enderço, String DatNasci, long Telefone, int CPF, double valAula){
-        super(Nome, Enderço, DatNasci, Telefone, CPF, valAula);
+    public Professor(long rs, Boolean tipoContrato, int numeroAulas, String Nome, String Endereço, String DatNasci, long Telefone, int CPF, double valAula){
+        super(Nome, Endereço, DatNasci, Telefone, CPF);
         this.rs = rs;
         this.tipoContrato = tipoContrato;
         this.numAulas = numeroAulas;
