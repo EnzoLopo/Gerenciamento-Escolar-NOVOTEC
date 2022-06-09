@@ -27,7 +27,7 @@ public class Aluno extends Pessoa {
         Materias = materias;
     }
 
-    public double Mensalidade() {
+    public double Mensalidade(int nAluno) {
         return (valAula * Materias);
     }
 

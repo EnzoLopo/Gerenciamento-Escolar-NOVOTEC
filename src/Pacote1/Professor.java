@@ -37,7 +37,7 @@ public class Professor extends Pessoa {
         this.numAulas = numAulas;
     }
 
-    public double Salario() {
+    public double Salario(int nProfessor) {
         return (valAula * numAulas);
     }
 

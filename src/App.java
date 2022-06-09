@@ -89,12 +89,12 @@ public class App {
                 case 8:
                     System.out.println("Qual é o Numero do Professor?");
                     nProfessor = entrada.nextInt();
-                    professor.Salario(nProfessor);
+                    System.out.println("O Salario do Professor é: " + professor.Salario(nProfessor));
                     break;
                 case 9:
                     System.out.println("Qual é o Numero do Aluno?");
                     nAluno = entrada.nextInt();
-                    aluno.Mensalidade(nAluno);
+                    System.out.println("O Aluno paga: " + aluno.Mensalidade(nAluno));
                     break;
                 case 10:
                 case 11:
