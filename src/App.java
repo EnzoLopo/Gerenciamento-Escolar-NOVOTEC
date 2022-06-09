@@ -1,4 +1,6 @@
 import Pacote1.Professor;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 import Pacote1.Aluno;
 
@@ -14,9 +16,11 @@ public class App {
         double valAula = 0;
         boolean tipoContrato = true;
 
-       // Declaração das Classes Usadas no Projeto// 
+        // Declaração das Classes Usadas no Projeto// 
         Professor professor = new Professor(rs, tipoContrato, numAulas, Nome, Endereço, DatNasci, Telefone, CPF);
         Aluno aluno = new Aluno(ra, Materias, Nome, Endereço, DatNasci, Telefone, CPF);
+
+        // ArrayList //
         
         do{
             System.out.println("\n1 - Cadastrar Aluno" +
@@ -82,6 +86,9 @@ public class App {
                     professor.setNumAulas(numAulas);
                     break;
                 case 3:
+                    System.out.println("\nNumero do Aluno: ");
+                    nAluno = entrada.nextInt();
+
                 case 4:
                 case 5:
                 case 6:
