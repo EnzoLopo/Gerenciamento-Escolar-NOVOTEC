@@ -87,6 +87,7 @@ public class App {
                     System.out.println("Numero de Aulas:");
                     numAulas = entrada.nextInt();
                     professor.setNumAulas(numAulas);
+                    break;
                 case 3:
                 case 4:
                 case 5:
@@ -100,6 +101,7 @@ public class App {
                     valAula = entrada.nextDouble();
                     aluno.setValAula(valAula);
                     professor.setValAula(valAula);
+                    break;
             }
         }while (opcao <= 11);
         }
