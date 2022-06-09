@@ -1,7 +1,6 @@
 import Pacote1.Professor;
 import java.util.Scanner;
 import Pacote1.Aluno;
-import Pacote1.Pessoa;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -11,7 +10,7 @@ public class App {
         // Variavéis//
         String Nome = "", Endereço = "", DatNasci = ""; 
         long Telefone = 0 , rs = 0, ra = 0;
-        int CPF = 0, Mensalidade = 0, Materias = 0, numAulas = 0, opcao = 0;
+        int CPF = 0, Mensalidade = 0, Materias = 0, numAulas = 0, opcao = 0, nAluno, nProfessor;
         double valAula = 0;
         boolean tipoContrato = true;
 
@@ -88,7 +87,15 @@ public class App {
                 case 6:
                 case 7:
                 case 8:
+                    System.out.println("Qual é o Numero do Professor?");
+                    nProfessor = entrada.nextInt();
+                    professor.Salario(nProfessor);
+                    break;
                 case 9:
+                    System.out.println("Qual é o Numero do Aluno?");
+                    nAluno = entrada.nextInt();
+                    aluno.Mensalidade(nAluno);
+                    break;
                 case 10:
                 case 11:
                     System.out.println("Qual é o Valor da Aula:");
