@@ -21,20 +21,40 @@ public class Pessoa {
         return Nome;
     }
 
+    public void setNome(String nome) {
+        Nome = nome;
+    }
+
     public String getDatNasci() {
         return DatNasci;
+    }
+
+    public void setDatNasci(String datNasci) {
+        DatNasci = datNasci;
     }
     
     public int getCPF() {
          return CPF;
      }
+
+    public void setCPF(int cPF) {
+        CPF = cPF;
+    }
     
     public String getEndereço() {
         return Endereço;
     }
 
+    public void setEndereço(String endereço) {
+        Endereço = endereço;
+    }
+
     public Long getTelefone() {
         return Telefone;
+    }
+
+    public void setTelefone(Long telefone) {
+        Telefone = telefone;
     }
 
     public void setValAula(double valAula) {

@@ -6,7 +6,7 @@ public class Professor extends Pessoa {
     private boolean tipoContrato;
     private int numAulas;
 
-    public Professor(long rs, Boolean tipoContrato, int numeroAulas, String Nome, String Endereço, String DatNasci, long Telefone, int CPF, double valAula){
+    public Professor(long rs, Boolean tipoContrato, int numeroAulas, String Nome, String Endereço, String DatNasci, long Telefone, int CPF){
         super(Nome, Endereço, DatNasci, Telefone, CPF);
         this.rs = rs;
         this.tipoContrato = tipoContrato;

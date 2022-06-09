@@ -6,8 +6,8 @@ import Pacote1.Pessoa;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Professor professor = new Professor(00, true, 0, "Nome", "Endereço", "DatNasci", 0000, 0000, 000);
-        Aluno aluno = new Aluno(00, 1, "Nome", "Endereço", "DatNasci", 0000, 0000, 000);
+        Professor professor = new Professor(00, true, 0, "Nome", "Endereço", "DatNasci", 0000, 0000);
+        Aluno aluno = new Aluno(00, 1, "Nome", "Endereço", "DatNasci", 0000, 0000);
         
         Scanner entrada = new Scanner(System.in);
 
@@ -20,12 +20,10 @@ public class App {
         int Mensalidade;
         int Materias;
         long rs;
-        int valAula;
+        double valAula;
         boolean tipoContrato;
         int numAulas;
         int opcao;
-
-        int Array[] = new int [10];
         
         do{
             System.out.println("\n1 Cadastrar Aluno");
@@ -44,19 +42,51 @@ public class App {
                 case 1: 
                     System.out.println("\nNome do Aluno:");
                     Nome = entrada.next();
+                    aluno.setNome(Nome);
                     System.out.println("ra do Aluno:");
                     ra = entrada.nextInt();
+                    aluno.setRa(ra);
                     System.out.println("Endereço do Aluno:"); 
-                    Endereço = entrada.next();           
+                    Endereço = entrada.next();      
+                    aluno.setEndereço(Endereço);     
                     System.out.println("Data de Nascimento do Aluno:");
                     DatNasci = entrada.next();
+                    aluno.setDatNasci(DatNasci);
                     System.out.println("CPF do Aluno:");
                     CPF = entrada.nextInt();
+                    aluno.setCPF(CPF);
                     System.out.println("Telefone do Aluno:");
                     Telefone = entrada.nextLong();
+                    aluno.setTelefone(Telefone);
                     System.out.println("Materias do Aluno:");
                     Materias = entrada.nextInt();
+                    aluno.setMaterias(Materias);
+                    break;
                 case 2:
+                    System.out.println("\nNome do Aluno:");
+                    Nome = entrada.next();
+                    professor.setNome(Nome);
+                    System.out.println("rs do Aluno:");
+                    rs = entrada.nextInt();
+                    professor.setRs(rs);
+                    System.out.println("Endereço do Professor:"); 
+                    Endereço = entrada.next();
+                    professor.setEndereço(Endereço);
+                    System.out.println("Data de Nascimento do Professor:");
+                    DatNasci = entrada.next();
+                    professor.setDatNasci(DatNasci);
+                    System.out.println("CPF do Professor:");
+                    CPF = entrada.nextInt();
+                    professor.setCPF(CPF);
+                    System.out.println("Telefone do Professor:");
+                    Telefone = entrada.nextLong();
+                    professor.setTelefone(Telefone);
+                    System.out.println("Tipo de Contrato:");
+                    tipoContrato = entrada.nextBoolean();
+                    professor.setTipoContrato(tipoContrato);
+                    System.out.println("Numero de Aulas:");
+                    numAulas = entrada.nextInt();
+                    professor.setNumAulas(numAulas);
                 case 3:
                 case 4:
                 case 5:
@@ -67,11 +97,11 @@ public class App {
                 case 10:
                 case 11:
                     System.out.println("Qual é o Valor da Aula:");
-                    valAula = entrada.nextInt();
+                    valAula = entrada.nextDouble();
                     aluno.setValAula(valAula);
                     professor.setValAula(valAula);
             }
-        }while (opcao <= 10);
+        }while (opcao <= 11);
         }
         
     }
