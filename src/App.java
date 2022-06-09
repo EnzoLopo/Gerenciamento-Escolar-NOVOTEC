@@ -6,7 +6,6 @@ import Pacote1.Pessoa;
 public class App {
     public static void main(String[] args) throws Exception {
 
-
         // Declaração do Scanner//
         Scanner entrada = new Scanner(System.in);
         // Variavéis//
