@@ -37,9 +37,24 @@ public class App {
             System.out.println("8 Ver Salarios");
             System.out.println("9 Ver Mensalidades");
             System.out.println("10 Ver Notas");
+            System.out.println("11 Valor Aula");
             opcao = entrada.nextInt();
             switch(opcao){
-                case 1:
+                case 1: 
+                    System.out.println("\nNome do Aluno:");
+                    Nome = entrada.next();
+                    System.out.println("ra do Aluno:");
+                    ra = entrada.nextInt();
+                    System.out.println("Endereço do Aluno:"); 
+                    Endereço = entrada.next();           
+                    System.out.println("Data de Nascimento do Aluno:");
+                    DatNasci = entrada.next();
+                    System.out.println("CPF do Aluno:");
+                    CPF = entrada.nextInt();
+                    System.out.println("Telefone do Aluno:");
+                    Telefone = entrada.nextLong();
+                    System.out.println("Materias do Aluno:");
+                    Materias = entrada.nextInt();
                 case 2:
                 case 3:
                 case 4:
@@ -49,6 +64,7 @@ public class App {
                 case 8:
                 case 9:
                 case 10:
+                case 11:
             }
         }while (opcao <= 10);
         }
