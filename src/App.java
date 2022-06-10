@@ -2,25 +2,32 @@ import Pacote1.Professor;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+
 import Pacote1.Aluno;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main( String[] args) throws Exception {
 
         // Declaração do Scanner//
         Scanner entrada = new Scanner(System.in);
         // Variavéis//
         String Nome = "", Endereço = "", DatNasci = ""; 
         long Telefone = 0 , rs = 0, ra = 0;
-        int CPF = 0, Mensalidade = 0, Materias = 0, numAulas = 0, opcao = 0, nAluno, nProfessor;
+        int CPF = 0;
+		int Mensalidade = 0;
+		int Materias = 0, numAulas = 0, opcao = 0, nAluno, nProfessor;
         double valAula = 0;
         boolean tipoContrato = true;
 
         // Declaração das Classes Usadas no Projeto// 
-        Professor professor = new Professor(rs, tipoContrato, numAulas, Nome, Endereço, DatNasci, Telefone, CPF);
-        Aluno aluno = new Aluno(ra, Materias, Nome, Endereço, DatNasci, Telefone, CPF);
+         Professor professor = new Professor(rs, tipoContrato, numAulas, Nome, Endereço, DatNasci, Telefone, CPF);
+         Aluno aluno = new Aluno(ra, Materias, Nome, Endereço, DatNasci, Telefone, CPF);
 
         // ArrayList //
+
+        ArrayList<Aluno> lAlunos = new ArrayList();
+        ArrayList<Professor> lProfessor = new ArrayList();
         
         do{
             System.out.println("\n1 - Cadastrar Aluno" +
@@ -58,6 +65,8 @@ public class App {
                     System.out.println("Materias do Aluno:");
                     Materias = entrada.nextInt();
                     aluno.setMaterias(Materias);
+                    lAlunos.add(new Aluno(ra, Materias, Nome, Endereço, DatNasci, Telefone, CPF));
+                    mostraralunos(lAlunos);
                     break;
                 case 2:
                     System.out.println("\nNome do Aluno:");
@@ -92,6 +101,8 @@ public class App {
                 case 4:
                 case 5:
                 case 6:
+                    mostraralunos(lAlunos);
+                    break;
                 case 7:
                 case 8:
                     System.out.println("Qual é o Numero do Professor?");
@@ -112,6 +123,20 @@ public class App {
                     break;
             }
         }while (opcao <= 11);
+        }
+
+
+
+        public static void mostraralunos( ArrayList<Aluno> lista){
+            for( Aluno lAlunos : lista){
+                System.out.printf("%s\n", lAlunos.toString());
+            }
+
+        }
+        public static void mostrarprofessores(Arraylist<Professor> lista){
+            for(Professor lProfessor : lista){
+                System.out.printf("%s\n", lProfessor.toString());
+            }
         }
         
     }

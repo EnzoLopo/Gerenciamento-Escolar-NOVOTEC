@@ -39,4 +39,19 @@ public class Aluno extends Pessoa {
         return (valAula * Materias);
     }
 
+    @Override
+    public String toString() {
+        String result;
+
+        result = String.format("Nome do aluno: %s\n", Nome)+ 
+        String.format("RA do Aluno: %s\n", ra)+
+        String.format("Telefone do Aluno: %s\n", Telefone)+
+        String.format("Materias do Aluno: %s\n", Materias)+
+        String.format("Data de Nascimento do Aluno: %s\n", DatNasci)+
+        String.format("Mensalidade do Aluno: %s\n", Mensalidade)+
+        String.format("CPF do Aluno: %s\n", CPF);
+        return (result);
+     
+    }
+
 }

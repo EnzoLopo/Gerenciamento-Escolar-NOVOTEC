@@ -41,4 +41,19 @@ public class Professor extends Pessoa {
         return (valAula * numAulas);
     }
 
+    public String toString() {
+        String result;
+
+        result = String.format("Nome do Professor: %s\n", Nome)+ 
+        String.format("RS do Professor: %s\n", rs)+
+        String.format("Telefone do Professor: %s\n", Telefone)+
+        String.format("Salario do Professor: %s\n", Salario)+
+        String.format("Data de Nascimento do Professor: %s\n", DatNasci)+
+        String.format("Tipo de Contrato do Professor: %s\n", Mensalidade)+
+        String.format("CPF do Professor: %s\n", CPF)+
+        String.format("Numero de Aulas do Professsor: %s\n",numAulas);
+        return (result);
+     
+    }
+
 }

@@ -2,11 +2,11 @@ package Pacote1;
 
 public class Pessoa {
 
-    private String Nome;
-    private String Endereço;
-    private String DatNasci;
-    private Long Telefone;
-    private int CPF;
+    protected String Nome;
+    protected String Endereço;
+    protected String DatNasci;
+    protected Long Telefone;
+    protected int CPF;
     protected double valAula;
     
     public Pessoa(String Nome, String Endereço, String DatNasci, Long Telefone, int CPF){
