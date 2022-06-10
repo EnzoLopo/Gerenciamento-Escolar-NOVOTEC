@@ -1,9 +1,6 @@
 import Pacote1.Professor;
-
 import java.util.ArrayList;
 import java.util.Scanner;
-
-
 import Pacote1.Aluno;
 
 public class App {
@@ -133,7 +130,7 @@ public class App {
             }
 
         }
-        public static void mostrarprofessores(Arraylist<Professor> lista){
+        public static void mostrarprofessores(ArrayList<Professor> lista){
             for(Professor lProfessor : lista){
                 System.out.printf("%s\n", lProfessor.toString());
             }
