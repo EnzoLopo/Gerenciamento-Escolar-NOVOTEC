@@ -38,6 +38,9 @@ public class Aluno extends Pessoa {
     public double Mensalidade(int nAluno) {
         return (valAula * Materias);
     }
+    public double getMensalidade(Aluno aluno) {
+        return Mensalidade;
+    }
 
     @Override
     public String toString() {
@@ -52,6 +55,10 @@ public class Aluno extends Pessoa {
         String.format("CPF do Aluno: %s\n", CPF);
         return (result);
      
+    }
+
+    public String getNome(Aluno aluno) {
+        return Nome;
     }
 
 }

@@ -13,7 +13,7 @@ public class App {
         long Telefone = 0 , rs = 0, ra = 0;
         int CPF = 0;
 		int Mensalidade = 0;
-		int Materias = 0, numAulas = 0, opcao = 0, nAluno, nProfessor;
+		int Materias = 0, numAulas = 0, opcao = 0, nAluno = 0, nProfessor = 0;
         double valAula = 0;
         boolean tipoContrato = true;
 
@@ -26,22 +26,18 @@ public class App {
         ArrayList<Aluno> lAlunos = new ArrayList();
         ArrayList<Professor> lProfessor = new ArrayList();
         
+        
         do{
-            System.out.println("\n1 - Cadastrar Aluno" +
-                               "\n2 - Cadastrar Professor"+
-                               "\n3 - Diario de Classe"+
-                               "\n4 - Cadastrar Notas"+
-                               "\n5 - Ver Frequencia"+
-                               "\n6 - Ver Alunos"+
-                               "\n7 - Ver Professores" +
-                               "\n8 - Ver Salarios"+
-                               "\n9 - Ver Mensalidade"+
-                               "\n10 -Ver Notas"+
-                               "\n11- Valor Aula\n");
+            System.out.println("\n1 - Cadastrar Aluno       6 - Ver Alunos" +
+                               "\n2 - Cadastrar Professor   7 - Ver Professores"+
+                               "\n3 - Diario de Classe      8 - Ver Salarios"+
+                               "\n4 - Cadastrar Notas       9 - Ver Mensalidade"+
+                               "\n5 - Ver Frequencia       10 - Ver Notas"+
+                               "\n              11 - Valor Aula\n");
             opcao = entrada.nextInt();
             switch(opcao){
                 case 1: 
-                    System.out.println("\nNome do Aluno:");
+                    System.out.println("Nome do Aluno:");
                     Nome = entrada.next();
                     aluno.setNome(Nome);
                     System.out.println("ra do Aluno:");
@@ -66,10 +62,10 @@ public class App {
                     mostraralunos(lAlunos);
                     break;
                 case 2:
-                    System.out.println("\nNome do Aluno:");
+                    System.out.println("\nNome do Professor:");
                     Nome = entrada.next();
                     professor.setNome(Nome);
-                    System.out.println("rs do Aluno:");
+                    System.out.println("RS do Professor:");
                     rs = entrada.nextInt();
                     professor.setRs(rs);
                     System.out.println("Endereço do Professor:"); 
@@ -90,17 +86,22 @@ public class App {
                     System.out.println("Numero de Aulas:");
                     numAulas = entrada.nextInt();
                     professor.setNumAulas(numAulas);
+                    mostrarprofessores(lProfessor);
                     break;
                 case 3:
                     System.out.println("\nNumero do Aluno: ");
                     nAluno = entrada.nextInt();
-
+                    nAluno--;
+                    System.out.println(lAlunos.get(nAluno));
+                    break;
                 case 4:
                 case 5:
                 case 6:
                     mostraralunos(lAlunos);
                     break;
                 case 7:
+                    mostrarprofessores(lProfessor);
+                    break;
                 case 8:
                     System.out.println("Qual é o Numero do Professor?");
                     nProfessor = entrada.nextInt();
@@ -109,7 +110,8 @@ public class App {
                 case 9:
                     System.out.println("Qual é o Numero do Aluno?");
                     nAluno = entrada.nextInt();
-                    System.out.println("O Aluno paga: " + aluno.Mensalidade(nAluno));
+                    nAluno--;
+                    System.out.println("O Aluno " + aluno.getNome(lAlunos.get(nAluno)) + " " + "paga:" + " " + aluno.getMensalidade(lAlunos.get(nAluno)));
                     break;
                 case 10:
                 case 11:

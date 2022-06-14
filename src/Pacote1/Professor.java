@@ -6,6 +6,7 @@ public class Professor extends Pessoa {
     private boolean tipoContrato;
     private int numAulas;
 
+
     public Professor(long rs, Boolean tipoContrato, int numeroAulas, String Nome, String Endereço, String DatNasci, long Telefone, int CPF){
         super(Nome, Endereço, DatNasci, Telefone, CPF);
         this.rs = rs;
@@ -25,7 +26,7 @@ public class Professor extends Pessoa {
         return tipoContrato;
     }
 
-    public void setTipoContrato(boolean tipoContrato) {
+    public void setTipoContrato(Boolean tipoContrato) {
         this.tipoContrato = tipoContrato;
     }
 
@@ -40,7 +41,6 @@ public class Professor extends Pessoa {
     public double Salario(int nProfessor) {
         return (valAula * numAulas);
     }
-
     public String toString() {
         String result;
 
