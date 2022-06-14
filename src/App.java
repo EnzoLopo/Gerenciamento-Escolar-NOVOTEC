@@ -95,7 +95,9 @@ public class App {
                     System.out.println(lAlunos.get(nAluno));
                     break;
                 case 4:
+                break;
                 case 5:
+                break;
                 case 6:
                     mostraralunos(lAlunos);
                     break;
@@ -114,8 +116,9 @@ public class App {
                     System.out.println("O Aluno " + aluno.getNome(lAlunos.get(nAluno)) + " " + "paga:" + " " + aluno.getMensalidade(lAlunos.get(nAluno)));
                     break;
                 case 10:
+                break;
                 case 11:
-                    System.out.println("Qual é o Valor da Aula:");
+                    System.out.println("Qual é o valor da aula:");
                     valAula = entrada.nextDouble();
                     aluno.setValAula(valAula);
                     professor.setValAula(valAula);
