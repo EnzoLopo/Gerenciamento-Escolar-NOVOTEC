@@ -7,8 +7,11 @@ public class App {
     public static void main( String[] args) throws Exception {
 
         // Declaração do Scanner//
+
         Scanner entrada = new Scanner(System.in);
+
         // Variavéis//
+
         String Nome = "", Endereço = "", DatNasci = ""; 
         long Telefone = 0 , rs = 0, ra = 0;
         int CPF = 0;
@@ -18,6 +21,7 @@ public class App {
         boolean tipoContrato = true;
 
         // Declaração das Classes Usadas no Projeto// 
+        
          Professor professor = new Professor(rs, tipoContrato, numAulas, Nome, Endereço, DatNasci, Telefone, CPF);
          Aluno aluno = new Aluno(ra, Materias, Nome, Endereço, DatNasci, Telefone, CPF);
 
@@ -25,15 +29,31 @@ public class App {
 
         ArrayList<Aluno> lAlunos = new ArrayList();
         ArrayList<Professor> lProfessor = new ArrayList();
+
+        // Alunos //
+
+        lAlunos.add(new Aluno(01, 25, "Enzo Lopo", "Rua da Penha, 58", "07/12/2005", 973848189, 412050160));
+        lAlunos.add(new Aluno(02, 50, "Victor", "Rua Augusto da Silva, 1080", "15/02/2006", 683761871, 961935590));
+        lAlunos.add(new Aluno(03, 10, "Matheus", "Rua Morumbi, 1", "20/09/2004", 893528384, 842675320));
+
+        // Professores //
+
+        lProfessor.add(new Professor(01, true, 40, "Josévaldo", "Rua das Almas, 66", "10/01/1980", 1599977755, 879888777));
         
-        
+        // Sistema //
+
+        System.out.println( "Bem Vindo ao Sistema de Gerenciamento Escolar!\n" + 
+            "Qual será o valor das aulas?:");
+            valAula = entrada.nextDouble();
+            aluno.setValAula(valAula);
+            professor.setValAula(valAula);
+
         do{
             System.out.println("\n1 - Cadastrar Aluno       6 - Ver Alunos" +
                                "\n2 - Cadastrar Professor   7 - Ver Professores"+
                                "\n3 - Diario de Classe      8 - Ver Salarios"+
                                "\n4 - Cadastrar Notas       9 - Ver Mensalidade"+
-                               "\n5 - Ver Frequencia       10 - Ver Notas"+
-                               "\n              11 - Valor Aula\n");
+                               "\n5 - Ver Frequencia       10 - Ver Notas\n");
             opcao = entrada.nextInt();
             switch(opcao){
                 case 1: 
@@ -117,12 +137,6 @@ public class App {
                     break;
                 case 10:
                 break;
-                case 11:
-                    System.out.println("Qual é o valor da aula:");
-                    valAula = entrada.nextDouble();
-                    aluno.setValAula(valAula);
-                    professor.setValAula(valAula);
-                    break;
             }
         }while (opcao <= 11);
         }
