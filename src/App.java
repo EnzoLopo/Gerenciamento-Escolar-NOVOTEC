@@ -14,39 +14,45 @@ public class App {
 
         String Nome = "", Endereço = "", DatNasci = ""; 
         long Telefone = 0 , rs = 0, ra = 0;
-        int CPF = 0;
-		int Mensalidade = 0;
-		int Materias = 0, numAulas = 0, opcao = 0, nAluno = 0, nProfessor = 0;
+        int CPF = 0, opcao = 0, nAluno = 0, nProfessor = 0;
         double valAula = 0;
         boolean tipoContrato = true;
+        double Materias = 0;
+        double Mensalidade = (valAula * Materias);
+        double numAulas = 0;
+        double Salario = (numAulas * valAula);
 
         // Declaração das Classes Usadas no Projeto// 
         
-         Professor professor = new Professor(rs, tipoContrato, numAulas, Nome, Endereço, DatNasci, Telefone, CPF);
-         Aluno aluno = new Aluno(ra, Materias, Nome, Endereço, DatNasci, Telefone, CPF);
+         Professor professor = new Professor(rs, tipoContrato, numAulas, Nome, Endereço, DatNasci, Telefone, CPF,Salario);
+         Aluno aluno = new Aluno(ra, Materias, Nome, Endereço, DatNasci, Telefone, CPF, Mensalidade);
 
         // ArrayList //
 
         ArrayList<Aluno> lAlunos = new ArrayList();
         ArrayList<Professor> lProfessor = new ArrayList();
 
-        // Alunos //
 
-        lAlunos.add(new Aluno(01, 25, "Enzo Lopo", "Rua da Penha, 58", "07/12/2005", 973848189, 412050160));
-        lAlunos.add(new Aluno(02, 50, "Victor", "Rua Augusto da Silva, 1080", "15/02/2006", 683761871, 961935590));
-        lAlunos.add(new Aluno(03, 10, "Matheus", "Rua Morumbi, 1", "20/09/2004", 893528384, 842675320));
 
-        // Professores //
 
-        lProfessor.add(new Professor(01, true, 40, "Josévaldo", "Rua das Almas, 66", "10/01/1980", 1599977755, 879888777));
         
-        // Sistema //
+        // Inicialização do Sistema //
 
         System.out.println( "Bem Vindo ao Sistema de Gerenciamento Escolar!\n" + 
             "Qual será o valor das aulas?:");
             valAula = entrada.nextDouble();
             aluno.setValAula(valAula);
             professor.setValAula(valAula);
+                   
+            // Alunos //
+
+       // lAlunos.add(new Aluno(01, 25.00, "Enzo Lopo", "Rua da Penha, 58", "07/12/2005", 973848189, 412050160, Mensalidade));
+       // lAlunos.add(new Aluno(02, 50.00, "Victor", "Rua Augusto da Silva, 1080", "15/02/2006", 683761871, 961935590, Mensalidade));
+       // lAlunos.add(new Aluno(03, 10.00, "Matheus", "Rua Morumbi, 1", "20/09/2004", 893528384, 842675320, Mensalidade));
+
+            // Professores //
+
+       // lProfessor.add(new Professor(01, true, 40.00, "Josévaldo", "Rua das Almas, 66", "10/01/1980", 1599977755, 879888777));
 
         do{
             System.out.println("\n1 - Cadastrar Aluno       6 - Ver Alunos" +
@@ -60,7 +66,7 @@ public class App {
                     System.out.println("Nome do Aluno:");
                     Nome = entrada.next();
                     aluno.setNome(Nome);
-                    System.out.println("ra do Aluno:");
+                    System.out.println("RA do Aluno:");
                     ra = entrada.nextInt();
                     aluno.setRa(ra);
                     System.out.println("Endereço do Aluno:"); 
@@ -78,7 +84,9 @@ public class App {
                     System.out.println("Materias do Aluno:");
                     Materias = entrada.nextInt();
                     aluno.setMaterias(Materias);
-                    lAlunos.add(new Aluno(ra, Materias, Nome, Endereço, DatNasci, Telefone, CPF));
+                    Mensalidade = valAula * Materias;
+                    aluno.setMensalidade(Mensalidade);
+                    lAlunos.add(new Aluno(ra, Materias, Nome, Endereço, DatNasci, Telefone, CPF, Mensalidade));
                     mostraralunos(lAlunos);
                     break;
                 case 2:
@@ -104,8 +112,11 @@ public class App {
                     tipoContrato = entrada.nextBoolean();
                     professor.setTipoContrato(tipoContrato);
                     System.out.println("Numero de Aulas:");
-                    numAulas = entrada.nextInt();
+                    numAulas = entrada.nextDouble();
                     professor.setNumAulas(numAulas);
+                    Salario = valAula * numAulas;
+                    professor.setSalario(Salario);
+                    lProfessor.add(new Professor(rs, tipoContrato, numAulas, Nome, Endereço, DatNasci, Telefone, CPF, Salario));
                     mostrarprofessores(lProfessor);
                     break;
                 case 3:
@@ -127,7 +138,8 @@ public class App {
                 case 8:
                     System.out.println("Qual é o Numero do Professor?");
                     nProfessor = entrada.nextInt();
-                    System.out.println("O Salario do Professor é: " + professor.Salario(nProfessor));
+                    nProfessor--;
+                    System.out.println("O Salario do Professor "+ professor.getNome(lProfessor.get(nProfessor)) + " " + "é: " + professor.Salario(nProfessor) + "R$");
                     break;
                 case 9:
                     System.out.println("Qual é o Numero do Aluno?");

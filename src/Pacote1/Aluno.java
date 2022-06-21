@@ -5,12 +5,13 @@ import java.util.ArrayList;
 public class Aluno extends Pessoa {
     private long ra;
     private double Mensalidade;
-    private int Materias;
+    private double Materias;
 
-    public Aluno (long ra, int Materias, String Nome, String Endereço, String DatNasci, long Telefone, int CPF){
+    public Aluno (long ra, Double Materias, String Nome, String Endereço, String DatNasci, long Telefone, int CPF, Double Mensalidade){
         super(Nome, Endereço, DatNasci, Telefone, CPF);
         this.ra = ra;
         this.Materias = Materias;
+        this.Mensalidade = Mensalidade;
     }
 
     public ArrayList<Aluno> list = new ArrayList<Aluno>();
@@ -27,18 +28,19 @@ public class Aluno extends Pessoa {
         this.ra = ra;
     }
 
-    public int getMaterias() {
+    public double getMaterias() {
         return Materias;
     }
 
-    public void setMaterias(int materias) {
+    public void setMaterias(Double materias) {
         Materias = materias;
     }
 
-    public double Mensalidade(int nAluno) {
-        return (valAula * Materias);
-    }
     public double getMensalidade(Aluno aluno) {
+        return Mensalidade;
+    }
+    public double setMensalidade(double Mensalidade){
+        this.Mensalidade = Mensalidade;
         return Mensalidade;
     }
 

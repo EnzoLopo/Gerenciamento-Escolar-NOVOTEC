@@ -4,14 +4,15 @@ public class Professor extends Pessoa {
     private long rs;
     private double Salario;
     private boolean tipoContrato;
-    private int numAulas;
+    private double numAulas;
 
 
-    public Professor(long rs, Boolean tipoContrato, int numeroAulas, String Nome, String Endereço, String DatNasci, long Telefone, int CPF){
+    public Professor(long rs, Boolean tipoContrato, double numAulas2, String Nome, String Endereço, String DatNasci, long Telefone, int CPF, Double Salario){
         super(Nome, Endereço, DatNasci, Telefone, CPF);
         this.rs = rs;
         this.tipoContrato = tipoContrato;
-        this.numAulas = numeroAulas;
+        this.numAulas = numAulas2;
+        this.Salario = Salario;
     }
 
     public long getRs() {
@@ -30,17 +31,25 @@ public class Professor extends Pessoa {
         this.tipoContrato = tipoContrato;
     }
 
-    public int getNumAulas() {
+    public double getNumAulas() {
         return numAulas;
     }
 
-    public void setNumAulas(int numAulas) {
+    public void setNumAulas(Double numAulas) {
         this.numAulas = numAulas;
     }
 
     public double Salario(int nProfessor) {
         return (valAula * numAulas);
     }
+    public double setSalario(double salario) {
+        Salario = salario;
+        return salario;
+    }
+    public String getNome(Professor professor) {
+        return Nome;
+    }
+
     public String toString() {
         String result;
 
