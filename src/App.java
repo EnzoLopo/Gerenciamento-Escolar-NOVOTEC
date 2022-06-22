@@ -51,7 +51,7 @@ public class App {
         lAlunos.add(new Aluno(03, 10.00, "Matheus", "Rua Morumbi, 1", "20/09/2004", 893528384, 842675320, Mensalidade = valAula * 10.00));
 
             // Professores //
-       // lProfessor.add(new Professor(01, true, 40.00, "Josévaldo", "Rua das Almas, 66", "10/01/1980", 1599977755, 879888777));
+       lProfessor.add(new Professor(01, true, 40.00, "Josévaldo", "Rua das Almas, 66", "10/01/1980", 1599977755, 879888777, Salario = valAula * 40.00 ));
 
         do{
             System.out.println("\n1 - Cadastrar Aluno       6 - Ver Alunos" +
