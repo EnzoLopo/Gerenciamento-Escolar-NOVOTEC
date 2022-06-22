@@ -10,7 +10,7 @@ public class App {
 
         Scanner entrada = new Scanner(System.in);
 
-        // Variavéis//
+        //Variavéis//
 
         String Nome = "", Endereço = "", DatNasci = ""; 
         long Telefone = 0 , rs = 0, ra = 0;
@@ -46,12 +46,11 @@ public class App {
                    
             // Alunos //
 
-       // lAlunos.add(new Aluno(01, 25.00, "Enzo Lopo", "Rua da Penha, 58", "07/12/2005", 973848189, 412050160, Mensalidade));
-       // lAlunos.add(new Aluno(02, 50.00, "Victor", "Rua Augusto da Silva, 1080", "15/02/2006", 683761871, 961935590, Mensalidade));
-       // lAlunos.add(new Aluno(03, 10.00, "Matheus", "Rua Morumbi, 1", "20/09/2004", 893528384, 842675320, Mensalidade));
+        lAlunos.add(new Aluno(01, 25.00, "Enzo Lopo", "Rua da Penha, 58", "07/12/2005", 973848189, 412050160, Mensalidade = valAula * 25.00));
+        lAlunos.add(new Aluno(02, 50.00, "Victor", "Rua Augusto da Silva, 1080", "15/02/2006", 683761871, 961935590, Mensalidade = valAula * 50.00));
+        lAlunos.add(new Aluno(03, 10.00, "Matheus", "Rua Morumbi, 1", "20/09/2004", 893528384, 842675320, Mensalidade = valAula * 10.00));
 
             // Professores //
-
        // lProfessor.add(new Professor(01, true, 40.00, "Josévaldo", "Rua das Almas, 66", "10/01/1980", 1599977755, 879888777));
 
         do{
