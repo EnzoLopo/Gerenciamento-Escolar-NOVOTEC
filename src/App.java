@@ -41,8 +41,14 @@ public class App {
         System.out.println( "Bem Vindo ao Sistema de Gerenciamento Escolar!\n" + 
             "Qual será o valor das aulas?:");
             valAula = entrada.nextDouble();
+            if(valAula <= 0 ){
+                System.out.println("O Valor da Aula não pode ser igual ou inferior a 0");
+                System.out.println("Tente Novamente!");
+                return;
+            }else{
             aluno.setValAula(valAula);
-            professor.setValAula(valAula);
+            professor.setValAula(valAula);}
+
                    
             // Alunos //
 
@@ -54,10 +60,10 @@ public class App {
        lProfessor.add(new Professor(01, true, 40.00, "Josévaldo", "Rua das Almas, 66", "10/01/1980", 1599977755, 879888777, Salario = valAula * 40.00 ));
 
         do{
-            System.out.println("\n1 - Cadastrar Aluno       6 - Ver Alunos" +
-                               "\n2 - Cadastrar Professor   7 - Ver Professores"+
-                               "\n3 - Diario de Classe      8 - Ver Salarios"+
-                               "\n4 - Cadastrar Notas       9 - Ver Mensalidade"+
+            System.out.println("\n1 - Cadastrar Aluno       6 - Ver Lista de Alunos" +
+                               "\n2 - Cadastrar Professor   7 - Ver Lista de  Professores"+
+                               "\n3 - Diario de Classe      8 - Ver Informações de Professores"+
+                               "\n4 - Cadastrar Notas       9 - Ver Informações de Alunos"+
                                "\n5 - Ver Frequencia       10 - Ver Notas\n");
             opcao = entrada.nextInt();
             switch(opcao){
@@ -137,14 +143,24 @@ public class App {
                 case 8:
                     System.out.println("Qual é o Numero do Professor?");
                     nProfessor = entrada.nextInt();
+                    if(nProfessor > lProfessor.size()){
+                        System.out.println("Esse Professor não foi localizado no Sistema");
+                        System.out.println("Tente Novamente");
+                        break;
+                    }
                     nProfessor--;
-                    System.out.println("O Salario do Professor "+ professor.getNome(lProfessor.get(nProfessor)) + " " + "é: " + professor.Salario(nProfessor) + "R$");
+                    System.out.println((lProfessor.get(nProfessor)));
                     break;
                 case 9:
                     System.out.println("Qual é o Numero do Aluno?");
                     nAluno = entrada.nextInt();
+                    if(nAluno > lAlunos.size()){
+                        System.out.println("Esse Aluno não foi localizado no Sistema");
+                        System.out.println("Tente Novamente");
+                        break;
+                    }
                     nAluno--;
-                    System.out.println("O Aluno " + aluno.getNome(lAlunos.get(nAluno)) + " " + "paga:" + " " + aluno.getMensalidade(lAlunos.get(nAluno)));
+                    System.out.println(lAlunos.get(nAluno));
                     break;
                 case 10:
                 break;
