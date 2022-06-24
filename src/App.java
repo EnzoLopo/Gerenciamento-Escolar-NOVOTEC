@@ -1,3 +1,9 @@
+/* Professor: Fernando Batoni Areias
+ * Grupo: Enzo Lopo
+ * Matheus Santos
+ * Victor Zaneti
+ */
+
 import Pacote1.Professor;
 import java.util.ArrayList;
 import java.util.Scanner;
