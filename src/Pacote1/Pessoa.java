@@ -3,15 +3,15 @@ package Pacote1;
 public class Pessoa {
 
     protected String Nome;
-    protected String Endereço;
+    protected String CEP;
     protected String DatNasci;
     protected Long Telefone;
     protected int CPF;
     protected double valAula;
     
-    public Pessoa(String Nome, String Endereço, String DatNasci, Long Telefone, int CPF){
+    public Pessoa(String Nome, String CEP, String DatNasci, Long Telefone, int CPF){
         this.Nome = Nome;
-        this.Endereço = Endereço;
+        this.CEP = CEP;
         this.DatNasci = DatNasci;
         this.Telefone = Telefone;
         this.CPF = CPF;
@@ -41,12 +41,12 @@ public class Pessoa {
         CPF = cPF;
     }
     
-    public String getEndereço() {
-        return Endereço;
+    public String getCEP() {
+        return CEP;
     }
 
-    public void setEndereço(String endereço) {
-        Endereço = endereço;
+    public void setCEP(String CEP) {
+        CEP = CEP;
     }
 
     public Long getTelefone() {

@@ -1,6 +1,7 @@
 package Pacote1;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Aluno extends Pessoa {
     private long ra;
@@ -8,8 +9,8 @@ public class Aluno extends Pessoa {
     private double qntaulas;
     private double nota1, nota2, nota3, nota4, media;
 
-    public Aluno (long ra, Double qntaulas, String Nome, String Endereço, String DatNasci, long Telefone, int CPF, Double Mensalidade, double nota1, double nota2, double nota3, double nota4, double media){
-        super(Nome, Endereço, DatNasci, Telefone, CPF);
+    public Aluno (long ra, Double qntaulas, String Nome, String CEP, String DatNasci, long Telefone, int CPF, Double Mensalidade, double nota1, double nota2, double nota3, double nota4, double media){
+        super(Nome, CEP, DatNasci, Telefone, CPF);
         this.ra = ra;
         this.qntaulas = qntaulas;
         this.Mensalidade = Mensalidade;
@@ -86,19 +87,33 @@ public class Aluno extends Pessoa {
         String.format("Quantidade de Aulas do Aluno: %s\n", qntaulas)+
         String.format("Data de Nascimento do Aluno: %s\n", DatNasci)+
         String.format("Mensalidade do Aluno: %s\n", Mensalidade)+
-        String.format("CPF do Aluno: %s\n", CPF);
+        String.format("CPF do Aluno: %s\n", CPF)+
+        String.format("CEP do Aluno: %s\n", CEP);
         return (result);
      
     }
     public String toString2(){
         String result2;
+        if(nota1 == 0){
+            result2 = String.format("Aluno : %s\n", Nome)+
+            String.format("Nota 1 do Aluno: Nota não cadastrada\n" )+
+            String.format("Nota 2 do Aluno: Nota não cadastrada\n")+
+            String.format("Nota 3 do Aluno: Nota não cadastrada\n")+
+            String.format("Nota 4 do Aluno: Nota não cadastrada\n")+
+            String.format("\nMédia do Aluno: Nota não cadastrada\n");
+            
+        }else{
+
         result2 = String.format("Aluno : %s\n", Nome)+
         String.format("Nota 1 do Aluno: %s\n", nota1)+
         String.format("Nota 2 do Aluno: %s\n", nota2)+
         String.format("Nota 3 do Aluno: %s\n", nota3)+
         String.format("Nota 4 do Aluno: %s\n", nota4)+
         String.format("Média do Aluno: %s\n", media);
+        
+      }
         return(result2);
+        
     }
 
     public String getNome(Aluno aluno) {

@@ -7,8 +7,8 @@ public class Professor extends Pessoa {
     private double numAulas;
 
 
-    public Professor(long rs, Boolean tipoContrato, double numAulas2, String Nome, String Endereço, String DatNasci, long Telefone, int CPF, Double Salario){
-        super(Nome, Endereço, DatNasci, Telefone, CPF);
+    public Professor(long rs, Boolean tipoContrato, double numAulas2, String Nome, String CEP, String DatNasci, long Telefone, int CPF, Double Salario){
+        super(Nome, CEP, DatNasci, Telefone, CPF);
         this.rs = rs;
         this.tipoContrato = tipoContrato;
         this.numAulas = numAulas2;
@@ -60,7 +60,8 @@ public class Professor extends Pessoa {
         String.format("Data de Nascimento do Professor: %s\n", DatNasci)+
         String.format("Tipo de Contrato do Professor: %s\n", tipoContrato)+
         String.format("CPF do Professor: %s\n", CPF)+
-        String.format("Numero de Aulas do Professsor: %s\n",numAulas);
+        String.format("Numero de Aulas do Professsor: %s\n",numAulas)+
+        String.format("CEP do Professor: %s\n", CEP);
         return (result);
      
     }
