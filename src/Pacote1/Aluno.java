@@ -6,8 +6,9 @@ public class Aluno extends Pessoa {
     private long ra;
     private double Mensalidade;
     private double qntaulas;
+    private double nota1, nota2, nota3, nota4, media;
 
-    public Aluno (long ra, Double qntaulas, String Nome, String Endereço, String DatNasci, long Telefone, int CPF, Double Mensalidade){
+    public Aluno (long ra, Double qntaulas, String Nome, String Endereço, String DatNasci, long Telefone, int CPF, Double Mensalidade, double nota1, double nota2, double nota3, double nota4, double media){
         super(Nome, Endereço, DatNasci, Telefone, CPF);
         this.ra = ra;
         this.qntaulas = qntaulas;
@@ -31,7 +32,7 @@ public class Aluno extends Pessoa {
     public double getqntaulas() {
         return qntaulas;
     }
-    
+
     public void setqntaulas(double qntaulas) {
         this.qntaulas = qntaulas;
     }
@@ -43,6 +44,38 @@ public class Aluno extends Pessoa {
         this.Mensalidade = Mensalidade;
         return Mensalidade;
     }
+    public double getNota1() {
+        return nota1;
+    }
+    public double getNota2() {
+        return nota2;
+    }
+    public double getNota3() {
+        return nota3;
+    }
+    public double getNota4() {
+        return nota4;
+    }
+    public double getMedia() {
+        return media;
+    }
+    public void setNota1(double nota1) {
+        this.nota1 = nota1;
+    }
+    public void setNota2(double nota2) {
+        this.nota2 = nota2;
+    }
+    public void setNota3(double nota3) {
+        this.nota3 = nota3;
+    }
+    public void setNota4(double nota4) {
+        this.nota4 = nota4;
+    }
+    public void setMedia(double media) {
+        this.media = media;
+    }
+    
+
     
     public String toString() {
         String result;
@@ -56,6 +89,16 @@ public class Aluno extends Pessoa {
         String.format("CPF do Aluno: %s\n", CPF);
         return (result);
      
+    }
+    public String toString2(){
+        String result2;
+        result2 = String.format("Aluno : %s\n", Nome)+
+        String.format("Nota 1 do Aluno: %s\n", nota1)+
+        String.format("Nota 2 do Aluno: %s\n", nota2)+
+        String.format("Nota 3 do Aluno: %s\n", nota3)+
+        String.format("Nota 4 do Aluno: %s\n", nota4)+
+        String.format("Média do Aluno: %s\n", media);
+        return(result2);
     }
 
     public String getNome(Aluno aluno) {

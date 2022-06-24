@@ -17,13 +17,13 @@ public class App {
         int CPF = 0, opcao = 0, nAluno = 0, nProfessor = 0;
         double valAula = 0;
         boolean tipoContrato = true;
-        double qntaulas = 0, Mensalidade = (valAula * qntaulas), numAulas = 0, Salario = (numAulas * valAula);
+        double qntaulas = 0, Mensalidade = (valAula * qntaulas), numAulas = 0, Salario = (numAulas * valAula), nota1 = 0, nota2 = 0, nota3 = 0, nota4 = 0, media = (nota1 + nota2 + nota3 + nota4)/4;
 
 
         // Declaração das Classes Usadas no Projeto// 
         
          Professor professor = new Professor(rs, tipoContrato, numAulas, Nome, Endereço, DatNasci, Telefone, CPF,Salario);
-         Aluno aluno = new Aluno(ra, qntaulas, Nome, Endereço, DatNasci, Telefone, CPF, Mensalidade);
+         Aluno aluno = new Aluno(ra, qntaulas, Nome, Endereço, DatNasci, Telefone, CPF, Mensalidade, nota1, nota2, nota3, nota4, media);
 
         // ArrayList //
 
@@ -51,9 +51,9 @@ public class App {
                    
             // Alunos //
 
-        lAlunos.add(new Aluno(01, 25.00, "Enzo Lopo", "Rua da Penha, 58", "07/12/2005", 973848189, 412050160, Mensalidade = valAula * 25.00));
-        lAlunos.add(new Aluno(02, 50.00, "Victor", "Rua Augusto da Silva, 1080", "15/02/2006", 683761871, 961935590, Mensalidade = valAula * 50.00));
-        lAlunos.add(new Aluno(03, 10.00, "Matheus", "Rua Morumbi, 1", "20/09/2004", 893528384, 842675320, Mensalidade = valAula * 10.00));
+        lAlunos.add(new Aluno(01, 25.00, "Enzo Lopo", "Rua da Penha, 58", "07/12/2005", 973848189, 412050160, Mensalidade = valAula * 25.00, nota1, nota2, nota3, nota4, media = (nota1 + nota2 + nota3 + nota4)/4));
+        lAlunos.add(new Aluno(02, 50.00, "Victor", "Rua Augusto da Silva, 1080", "15/02/2006", 683761871, 961935590, Mensalidade = valAula * 50.00, nota1, nota2, nota3, nota4, media = (nota1 + nota2 + nota3 + nota4)/4));
+        lAlunos.add(new Aluno(03, 10.00, "Matheus", "Rua Morumbi, 1", "20/09/2004", 893528384, 842675320, Mensalidade = valAula * 10.00, nota1, nota2, nota3, nota4, media = (nota1 + nota2 + nota3 + nota4)/4));
 
             // Professores //
 
@@ -93,7 +93,7 @@ public class App {
                     aluno.setqntaulas(qntaulas);
                     Mensalidade = valAula * qntaulas;
                     aluno.setMensalidade(Mensalidade);
-                    lAlunos.add(new Aluno(ra, qntaulas, Nome, Endereço, DatNasci, Telefone, CPF, Mensalidade));
+                    lAlunos.add(new Aluno(ra, qntaulas, Nome, Endereço, DatNasci, Telefone, CPF, Mensalidade,nota1, nota2, nota3, nota4, media));
                     mostraralunos(lAlunos);
                     break;
                 case 2:
@@ -133,6 +133,26 @@ public class App {
                     System.out.println(lAlunos.get(nAluno));
                     break;
                 case 4:
+                    System.out.println("\n Numero do Aluno que deseja adicionar notas");
+                    nAluno = entrada.nextInt();
+                    nAluno--;
+                    System.out.println("Digite a Nota 1");
+                    nota1 = entrada.nextDouble();
+                    lAlunos.get(nAluno).setNota1(nota1);
+                    System.out.println("Digite a Nota 2");
+                    nota2 = entrada.nextDouble();
+                    lAlunos.get(nAluno).setNota2(nota2);
+                    System.out.println("Digite a Nota 3");
+                    nota3 = entrada.nextDouble();
+                    lAlunos.get(nAluno).setNota3(nota3);
+                    System.out.println("Digite a Nota 4");
+                    nota4 = entrada.nextDouble();
+                    lAlunos.get(nAluno).setNota4(nota4);
+                    media = (nota1 + nota2 + nota3 + nota4)/4;
+                    lAlunos.get(nAluno).setMedia(media);
+                    System.out.println("A Média deste aluno é de: " + media);
+
+
                 break;
                 case 5:
                 break;
@@ -165,6 +185,7 @@ public class App {
                     System.out.println(lAlunos.get(nAluno));
                     break;
                 case 10:
+                     mostrarnotas(lAlunos);
                 break;
             }
         }while (opcao <= 11);
@@ -182,6 +203,12 @@ public class App {
             for(Professor lProfessor : lista){
                 System.out.printf("%s\n", lProfessor.toString());
             }
+        }
+        public static void mostrarnotas(ArrayList<Aluno> lista2){
+            for(Aluno lAlunos : lista2){
+                System.out.printf("%s\n", lAlunos.toString2());
+            }
+
         }
         
     }
