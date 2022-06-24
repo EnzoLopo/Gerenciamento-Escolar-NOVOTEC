@@ -45,9 +45,9 @@ public class Pessoa {
         return CEP;
     }
 
-    public void setCEP(String CEP) {
-        CEP = CEP;
-    }
+    public void setCEP(String cEP) {
+    CEP = cEP;
+}
 
     public Long getTelefone() {
         return Telefone;

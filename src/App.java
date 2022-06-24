@@ -18,11 +18,10 @@ public class App {
 
         //Variavéis//
 
-        String Nome = "", CEP = "", DatNasci = ""; 
-        long Telefone = 0 , rs = 0, ra = 3;
-        int CPF = 0, opcao = 0, nAluno = 0, nProfessor = 0;
+        String Nome = "", CEP = "", DatNasci = "", tipoContrato = "";
+        long Telefone = 0 , rs = 1, ra = 3;
+        int CPF = 0, opcao = 0, nAluno = 0, nProfessor = 0, opcao2 = 0;
         double valAula = 0;
-        boolean tipoContrato = true;
         double qntaulas = 0, Mensalidade = (valAula * qntaulas), numAulas = 0, Salario = (numAulas * valAula), nota1 = 0, nota2 = 0, nota3 = 0, nota4 = 0, media = (nota1 + nota2 + nota3 + nota4)/4;
 
 
@@ -62,7 +61,7 @@ public class App {
 
             // Professores //
 
-        lProfessor.add(new Professor(01, true, 40.00, "Josévaldo", "15022-132", "10/01/1980", 1599977755, 879888777, Salario = valAula * 40.00 ));
+        lProfessor.add(new Professor(01, "Contratado", 40.00, "Josévaldo", "15022-132", "10/01/1980", 1599977755, 879888777, Salario = valAula * 40.00 ));
 
 
             // Menu Principal //
@@ -99,16 +98,13 @@ public class App {
                     Mensalidade = valAula * qntaulas;
                     aluno.setMensalidade(Mensalidade);
                     lAlunos.add(new Aluno(ra, qntaulas, Nome, CEP, DatNasci, Telefone, CPF, Mensalidade,nota1, nota2, nota3, nota4, media));
-                    mostraralunos(lAlunos);
+                    System.out.println("Aluno Matriculado com Sucesso!");
                     break;
 
                 case 2:
                     System.out.println("\nNome do Professor:");
                     Nome = entrada.next();
                     professor.setNome(Nome);
-                    System.out.println("RS do Professor:");
-                    rs = entrada.nextInt();
-                    professor.setRs(rs);
                     System.out.println("CEP do Professor:"); 
                     CEP = entrada.next();
                     professor.setCEP(CEP);
@@ -121,16 +117,30 @@ public class App {
                     System.out.println("Telefone do Professor:");
                     Telefone = entrada.nextLong();
                     professor.setTelefone(Telefone);
-                    System.out.println("Tipo de Contrato:");
-                    tipoContrato = entrada.nextBoolean();
-                    professor.setTipoContrato(tipoContrato);
+                    System.out.println("Tipo de Contrato - 1 para Contratado - 2 para Eventual");
+                    opcao2 = entrada.nextInt();
+                    if(opcao2 == 1){
+                        tipoContrato = "Contratado";
+                        professor.setTipoContrato(tipoContrato);
+                    }
+                    if(opcao2 == 2){
+                        tipoContrato = "Eventual";
+                        professor.setTipoContrato(tipoContrato);
+                    }
+                    if(opcao2 < 1 || opcao2 > 2 ){
+                        System.out.println("Não há essa opção, comece o cadastro novamente!");
+                        break;
+                    }
+                    rs++;
+                    System.out.println("O RS do Professor será: " + rs);
+                    professor.setRs(rs);
                     System.out.println("Numero de Aulas:");
                     numAulas = entrada.nextDouble();
                     professor.setNumAulas(numAulas);
                     Salario = valAula * numAulas;
                     professor.setSalario(Salario);
                     lProfessor.add(new Professor(rs, tipoContrato, numAulas, Nome, CEP, DatNasci, Telefone, CPF, Salario));
-                    mostrarprofessores(lProfessor);
+                    System.out.println("Professor Adicionado ao Sistema com Sucesso!");
                     break;
 
                 case 3:
@@ -175,11 +185,13 @@ public class App {
                 break;
 
                 case 4:
-                    mostraralunos(lAlunos);
+                    System.out.println("Lista ordenada por mumero do RA\n");
+                    mostrarnomesalunos(lAlunos);
                     break;
 
                 case 5:
-                    mostrarprofessores(lProfessor);
+                    System.out.println("Lista ordenada pelo numero do RS");
+                    mostrarnomesprofessores(lProfessor);
                     break;
 
                 case 6:
@@ -230,6 +242,16 @@ public class App {
         public static void mostrarnotas(ArrayList<Aluno> lista2){
             for(Aluno lAlunos : lista2){
                 System.out.printf("%s\n", lAlunos.toString2());
+            }
+        }
+        public static void mostrarnomesalunos(ArrayList<Aluno> lista3){
+            for(Aluno lAlunos : lista3){
+                System.out.printf("%s\n", lAlunos.toString3());
+            }
+        }
+        public static void mostrarnomesprofessores(ArrayList<Professor> lista3){
+            for(Professor lProfessor : lista3){
+                System.out.printf("%s\n", lProfessor.toString2());
             }
         }
     }

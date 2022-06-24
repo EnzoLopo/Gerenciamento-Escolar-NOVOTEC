@@ -1,8 +1,6 @@
 package Pacote1;
 
 import java.util.ArrayList;
-import java.util.Map;
-
 public class Aluno extends Pessoa {
     private long ra;
     private double Mensalidade;
@@ -100,7 +98,7 @@ public class Aluno extends Pessoa {
             String.format("Nota 2 do Aluno: Nota não cadastrada\n")+
             String.format("Nota 3 do Aluno: Nota não cadastrada\n")+
             String.format("Nota 4 do Aluno: Nota não cadastrada\n")+
-            String.format("\nMédia do Aluno: Nota não cadastrada\n");
+            String.format("\nMédia do Aluno: Média não calculada\n");
             
         }else{
 
@@ -114,6 +112,14 @@ public class Aluno extends Pessoa {
       }
         return(result2);
         
+    }
+    public String toString3(){
+        String result3;
+
+        result3 = String.format(" - %s", ra)+
+        String.format(" %s", Nome);
+        return(result3);
+
     }
 
     public String getNome(Aluno aluno) {

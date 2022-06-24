@@ -3,11 +3,11 @@ package Pacote1;
 public class Professor extends Pessoa {
     private long rs;
     private double Salario;
-    private boolean tipoContrato;
+    private String tipoContrato;
     private double numAulas;
 
 
-    public Professor(long rs, Boolean tipoContrato, double numAulas2, String Nome, String CEP, String DatNasci, long Telefone, int CPF, Double Salario){
+    public Professor(long rs, String tipoContrato, double numAulas2, String Nome, String CEP, String DatNasci, long Telefone, int CPF, Double Salario){
         super(Nome, CEP, DatNasci, Telefone, CPF);
         this.rs = rs;
         this.tipoContrato = tipoContrato;
@@ -23,11 +23,11 @@ public class Professor extends Pessoa {
         this.rs = rs;
     }
 
-    public boolean getTipoContrato() {
+    public String getTipoContrato() {
         return tipoContrato;
     }
 
-    public void setTipoContrato(Boolean tipoContrato) {
+    public void setTipoContrato(String tipoContrato) {
         this.tipoContrato = tipoContrato;
     }
 
@@ -64,6 +64,19 @@ public class Professor extends Pessoa {
         String.format("CEP do Professor: %s\n", CEP);
         return (result);
      
+    }
+    public String toString2(){
+        String result2;
+
+        result2 = String.format(" - %s", rs)+
+        String.format(" %s", Nome)+
+        String.format(" - %s" , tipoContrato);
+        return(result2);
+
+    }
+
+    public String getNome(Aluno aluno) {
+        return Nome;
     }
 
 }
