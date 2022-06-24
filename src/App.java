@@ -17,15 +17,13 @@ public class App {
         int CPF = 0, opcao = 0, nAluno = 0, nProfessor = 0;
         double valAula = 0;
         boolean tipoContrato = true;
-        double Materias = 0;
-        double Mensalidade = (valAula * Materias);
-        double numAulas = 0;
-        double Salario = (numAulas * valAula);
+        double qntaulas = 0, Mensalidade = (valAula * qntaulas), numAulas = 0, Salario = (numAulas * valAula);
+
 
         // Declaração das Classes Usadas no Projeto// 
         
          Professor professor = new Professor(rs, tipoContrato, numAulas, Nome, Endereço, DatNasci, Telefone, CPF,Salario);
-         Aluno aluno = new Aluno(ra, Materias, Nome, Endereço, DatNasci, Telefone, CPF, Mensalidade);
+         Aluno aluno = new Aluno(ra, qntaulas, Nome, Endereço, DatNasci, Telefone, CPF, Mensalidade);
 
         // ArrayList //
 
@@ -47,7 +45,8 @@ public class App {
                 return;
             }else{
             aluno.setValAula(valAula);
-            professor.setValAula(valAula);}
+            professor.setValAula(valAula);
+        }
 
                    
             // Alunos //
@@ -57,8 +56,11 @@ public class App {
         lAlunos.add(new Aluno(03, 10.00, "Matheus", "Rua Morumbi, 1", "20/09/2004", 893528384, 842675320, Mensalidade = valAula * 10.00));
 
             // Professores //
-       lProfessor.add(new Professor(01, true, 40.00, "Josévaldo", "Rua das Almas, 66", "10/01/1980", 1599977755, 879888777, Salario = valAula * 40.00 ));
 
+        lProfessor.add(new Professor(01, true, 40.00, "Josévaldo", "Rua das Almas, 66", "10/01/1980", 1599977755, 879888777, Salario = valAula * 40.00 ));
+
+            // Menu Principal //
+            
         do{
             System.out.println("\n1 - Cadastrar Aluno       6 - Ver Lista de Alunos" +
                                "\n2 - Cadastrar Professor   7 - Ver Lista de  Professores"+
@@ -86,12 +88,12 @@ public class App {
                     System.out.println("Telefone do Aluno:");
                     Telefone = entrada.nextLong();
                     aluno.setTelefone(Telefone);
-                    System.out.println("Materias do Aluno:");
-                    Materias = entrada.nextInt();
-                    aluno.setMaterias(Materias);
-                    Mensalidade = valAula * Materias;
+                    System.out.println("Quantidade de Aulas do Aluno:");
+                    qntaulas = entrada.nextInt();
+                    aluno.setqntaulas(qntaulas);
+                    Mensalidade = valAula * qntaulas;
                     aluno.setMensalidade(Mensalidade);
-                    lAlunos.add(new Aluno(ra, Materias, Nome, Endereço, DatNasci, Telefone, CPF, Mensalidade));
+                    lAlunos.add(new Aluno(ra, qntaulas, Nome, Endereço, DatNasci, Telefone, CPF, Mensalidade));
                     mostraralunos(lAlunos);
                     break;
                 case 2:
