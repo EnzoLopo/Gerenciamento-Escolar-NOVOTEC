@@ -74,8 +74,6 @@ public class Aluno extends Pessoa {
         this.media = media;
     }
     
-
-    
     public String toString() {
         String result;
 
