@@ -67,10 +67,11 @@ public class App {
             // Menu Principal //
             
         do{
-            System.out.println("\n1 - Cadastrar Aluno       5 - Ver Lista de Professores\n" +
-                               "2 - Cadastrar Professor   6 - Ver Informações de Professores\n"+
-                               "3 - Cadastrar Notas       7 - Ver Informações de Alunos\n"+
-                               "4 - Ver Lista de Alunos   8 - Ver notas\n");
+        System.out.println( "\n1 - Cadastrar Aluno                 6 - Ver Informações de Professores\n" +
+                               "2 - Cadastrar Professor             7 - Ver Informações de Alunos\n"+
+                               "3 - Cadastrar Notas                 8 - Ver notas\n"+
+                               "4 - Ver Lista de Alunos             9 - Remover Alunos\n"+
+                               "5 - Ver Lista de Professores       10 - Remover Professores");
             opcao = entrada.nextInt();
             switch(opcao){
                 case 1: 
@@ -221,8 +222,34 @@ public class App {
                 case 8:
                      mostrarnotas(lAlunos);
                 break;
+
+                case 9:
+                System.out.println("Digite o Numero do Aluno que você deseja remover! (Os numeros de RA não se alterarão!");
+                nAluno = entrada.nextInt();
+                if(nAluno > lAlunos.size()){
+                    System.out.println("Esse Aluno não foi localizado no Sistema");
+                    System.out.println("Tente Novamente");
+                    break;
+                }
+                nAluno--;
+                lAlunos.remove(nAluno);
+                System.out.println("Aluno removido com sucesso!");
+                break;
+
+                case 10:
+                System.out.println("Digite o Numero do Professor que você deseja remover! (Os numeros de RS não se alterarão!");
+                nProfessor = entrada.nextInt();
+                if(nProfessor > lProfessor.size()){
+                    System.out.println("Esse Professor não foi localizado no Sistema");
+                    System.out.println("Tente Novamente");
+                    break;
+                }
+                nProfessor--;
+                lProfessor.remove(nProfessor);
+                System.out.println("Professor removido com sucesso!");
+                break;
             }
-        }while (opcao <= 9);
+        }while (opcao <= 10);
     }
 
 
@@ -255,3 +282,5 @@ public class App {
             }
         }
     }
+        
+    
