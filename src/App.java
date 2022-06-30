@@ -55,13 +55,13 @@ public class App {
             // Alunos //
 
         lAlunos.add(new Aluno(01, 25.00, "Enzo Lopo", "15021-230", "07/12/2005", 973848189, 412050160, Mensalidade = valAula * 25.00, nota1, nota2, nota3, nota4, media = (nota1 + nota2 + nota3 + nota4)/4));
-        lAlunos.add(new Aluno(02, 50.00, "Victor", "17012-290", "15/02/2006", 683761871, 961935590, Mensalidade = valAula * 50.00, nota1, nota2, nota3, nota4, media = (nota1 + nota2 + nota3 + nota4)/4));
+        lAlunos.add(new Aluno(02, 50.00, "Victor", "17012-290", "25/07/2005", 683761871, 961935590, Mensalidade = valAula * 50.00, nota1, nota2, nota3, nota4, media = (nota1 + nota2 + nota3 + nota4)/4));
         lAlunos.add(new Aluno(03, 10.00, "Matheus", "18080-701", "20/09/2004", 893528384, 842675320, Mensalidade = valAula * 10.00, nota1, nota2, nota3, nota4, media = (nota1 + nota2 + nota3 + nota4)/4));
 
 
             // Professores //
 
-        lProfessor.add(new Professor(01, "Contratado", 40.00, "Josévaldo", "15022-132", "10/01/1980", 1599977755, 879888777, Salario = valAula * 40.00 ));
+        lProfessor.add(new Professor(01, "Contratado", 40.00, "Fernando", "15022-132", "10/01/1999", 1599977755, 879888777, Salario = valAula * 40.00 ));
 
 
             // Menu Principal //
@@ -73,6 +73,10 @@ public class App {
                                "4 - Ver Lista de Alunos             9 - Remover Alunos\n"+
                                "5 - Ver Lista de Professores       10 - Remover Professores");
             opcao = entrada.nextInt();
+            if(opcao > 10){
+                System.out.println("Opção não localizada no Sistema!");
+                return;
+            }
             switch(opcao){
                 case 1: 
                     System.out.println("Nome do Aluno:");
