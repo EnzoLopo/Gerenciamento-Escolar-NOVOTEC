@@ -151,6 +151,11 @@ public class App {
                 case 3:
                     System.out.println("\nNumero do Aluno que deseja adicionar notas");
                     nAluno = entrada.nextInt();
+                    if(nAluno > lAlunos.size()){
+                        System.out.println("Esse Aluno não foi localizado no Sistema");
+                        System.out.println("Tente Novamente");
+                        break;
+                    }
                     nAluno--;
                     if(lAlunos.get(nAluno).getNota1() > 0){
                         System.out.println("Esse Aluno já tem notas atribuidas!\n" +
@@ -164,11 +169,21 @@ public class App {
                         System.out.println("\nComece novamente!");
                         break;
                     }
+                    if(nota1 > 10){
+                        System.out.println("A nota não pode ser maior que dez!");
+                        System.out.println("\n Comece novamente!");
+                        break;
+                    }
                     System.out.println("Digite a Nota 2");
                     nota2 = entrada.nextDouble();
                     if(nota2 <= 0){
                         System.out.println("A nota não pode ser igual ou inferior a zero!");
                         System.out.println("\nComece novamente!");
+                        break;
+                    }
+                    if(nota2 > 10){
+                        System.out.println("A nota não pode ser maior que dez!");
+                        System.out.println("\n Comece novamente!");
                         break;
                     }
                     System.out.println("Digite a Nota 3");
@@ -178,11 +193,21 @@ public class App {
                         System.out.println("\nComece novamente!");
                         break;
                     }
+                    if(nota3 > 10){
+                        System.out.println("A nota não pode ser maior que dez!");
+                        System.out.println("\n Comece novamente!");
+                        break;
+                    }
                     System.out.println("Digite a Nota 4");
                     nota4 = entrada.nextDouble();
                     if(nota4 <= 0){
                         System.out.println("A nota não pode ser igual ou inferior a zero!");
                         System.out.println("\nComece novamente!\n");
+                        break;
+                    }
+                    if(nota4 > 10){
+                        System.out.println("A nota não pode ser maior que dez!");
+                        System.out.println("\n Comece novamente!");
                         break;
                     }
                     lAlunos.get(nAluno).setNota1(nota1);
