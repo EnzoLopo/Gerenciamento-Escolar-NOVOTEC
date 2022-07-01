@@ -152,6 +152,11 @@ public class App {
                     System.out.println("\nNumero do Aluno que deseja adicionar notas");
                     nAluno = entrada.nextInt();
                     nAluno--;
+                    if(lAlunos.get(nAluno).getNota1() > 0){
+                        System.out.println("Esse Aluno já tem notas atribuidas!\n" +
+                        "Portanto não é possivel atribuir novas notas!");
+                        break;
+                    }
                     System.out.println("Digite a Nota 1");
                     nota1 = entrada.nextDouble();
                     if(nota1 <= 0){
