@@ -147,6 +147,7 @@ public class App {
                     lProfessor.add(new Professor(rs, tipoContrato, numAulas, Nome, CEP, DatNasci, Telefone, CPF, Salario));
                     System.out.println("Professor Adicionado ao Sistema com Sucesso!");
                     break;
+                    
 
                 case 3:
                     System.out.println("\nNumero do Aluno que deseja adicionar notas");
