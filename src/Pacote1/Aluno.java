@@ -119,6 +119,16 @@ public class Aluno extends Pessoa {
         return(result3);
 
     }
+    public String toString4(){
+        String result4;
+
+        result4 = String.format(" - %s", ra)+
+        String.format(" %s", Nome)+
+        String.format(" %sR$", Mensalidade);
+        return(result4);
+
+    }
+
 
     public String getNome(Aluno aluno) {
         return Nome;

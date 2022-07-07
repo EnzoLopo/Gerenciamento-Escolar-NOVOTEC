@@ -74,6 +74,15 @@ public class Professor extends Pessoa {
         return(result2);
 
     }
+    public String toString3(){
+        String result3;
+
+        result3 = String.format(" - %s", rs)+
+        String.format(" %s", Nome)+
+        String.format(" %sR$", Salario);
+        return(result3);
+
+    }
 
     public String getNome(Aluno aluno) {
         return Nome;
