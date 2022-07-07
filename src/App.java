@@ -67,13 +67,14 @@ public class App {
             // Menu Principal //
             
         do{
-        System.out.println( "\n1 - Cadastrar Aluno                 6 - Ver Informações de Professores\n" +
-                               "2 - Cadastrar Professor             7 - Ver Informações de Alunos\n"+
-                               "3 - Cadastrar Notas                 8 - Ver notas\n"+
-                               "4 - Ver Lista de Alunos             9 - Remover Alunos\n"+
-                               "5 - Ver Lista de Professores       10 - Remover Professores");
+        System.out.println( "\n1 - Cadastrar Aluno                 7 - Ver Informações de Alunos\n" +
+                               "2 - Cadastrar Professor             8 - Ver Notas\n"+
+                               "3 - Cadastrar Notas                 9 - Remover Alunos\n"+
+                               "4 - Ver Lista de Alunos            10 - Remover Professores\n"+
+                               "5 - Ver Lista de Professores       11 - Ver Mensalidades \n"+
+                               "6 - Ver informações de Professores 12 - Ver Salarios\n");
             opcao = entrada.nextInt();
-            if(opcao > 10){
+            if(opcao > 12){
                 System.out.println("Opção não localizada no Sistema!");
                 return;
             }
@@ -283,8 +284,17 @@ public class App {
                 lProfessor.remove(nProfessor);
                 System.out.println("Professor removido com sucesso!");
                 break;
+
+                case 11: 
+                mostrarmensalidade(lAlunos);
+                break;
+
+                case 12:
+                mostrarsalario(lProfessor);
+                break;
             }
-        }while (opcao <= 10);
+            
+        }while (opcao <= 12);
     }
 
 
@@ -315,6 +325,16 @@ public class App {
             for(Professor lProfessor : lista3){
                 System.out.printf("%s\n", lProfessor.toString2());
             }
+        }
+        public static void mostrarmensalidade(ArrayList<Aluno> ListaMensalidade){
+            for(Aluno lAlunos : ListaMensalidade){
+                System.out.printf("%s\n", lAlunos.toString4());
+            }
+        }
+            public static void mostrarsalario(ArrayList<Professor> listaSalario){
+                for(Professor lProfessor : listaSalario){
+                    System.out.printf("%s\n", lProfessor.toString3());
+                }
         }
     }
         
